@@ -25,7 +25,7 @@ export class PublicationService {
     };
   }
 
-  public baseUrl = 'http://127.0.0.1:8000/api/records/publication';
+  public baseUrl = 'http://127.0.0.1:8000/api/records/publications';
   public publications = 'http://localhost:8000/api/publications';
 
   constructor(private http: HttpClient) { }

@@ -49,7 +49,7 @@ const routes: Routes = [
 
   { path: 'addp/:id', component: CreatePublicationComponent },
 
-  { path: 'publist', component: PublicationListComponent },
+  { path: 'publist/:id', component: PublicationListComponent },
 
 
   {path: 'about', component: AboutComponent },

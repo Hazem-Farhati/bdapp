@@ -55,12 +55,12 @@ class User implements UserInterface
     private $grade;
 
     /**
-     * @ORM\OneToMany(targetEntity=Cours::class, mappedBy="professeur")
+     * @ORM\OneToMany(targetEntity=Cours::class, mappedBy="user")
      */
     private $cours;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Matiere::class, mappedBy="idprofesseur")
+     * @ORM\ManyToMany(targetEntity=Matiere::class, mappedBy="ideuser")
      */
     private $matieres;
 
@@ -217,9 +217,9 @@ class User implements UserInterface
 
     
     /**
-     * @return Collection|Cours[]
+     * @return Collection|Cour[]
      */
-    public function getCours(): Collection
+    public function getCours(): ?cours
     {
         return $this->cours;
     }
@@ -249,7 +249,7 @@ class User implements UserInterface
     /**
      * @return Collection|Matiere[]
      */
-    public function getMatieres(): Collection
+    public function getMatieres(): ?matiere
     {
         return $this->matieres;
     }
@@ -278,7 +278,7 @@ class User implements UserInterface
     /**
      * @return Collection|Commentaire[]
      */
-    public function getCommentaires(): Collection
+    public function getCommentaires(): ?commentaire
     {
         return $this->commentaires;
     }
@@ -308,7 +308,7 @@ class User implements UserInterface
     /**
      * @return Collection|Message[]
      */
-    public function getMessages(): Collection
+    public function getMessages(): ?message
     {
         return $this->messages;
     }
@@ -338,7 +338,7 @@ class User implements UserInterface
     /**
      * @return Collection|Publication[]
      */
-    public function getPublications(): Collection
+    public function getPublications(): ?publication
     {
         return $this->publications;
     }

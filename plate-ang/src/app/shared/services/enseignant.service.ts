@@ -6,7 +6,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
-const apiUrl = 'http://127.0.0.1:8000/api/records/enseignant';
+const apiUrl = 'http://127.0.0.1:8000/api/records/user';
 
 
 @Injectable({
