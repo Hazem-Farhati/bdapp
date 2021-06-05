@@ -16,7 +16,8 @@ matiere:Matiere;
   user: any;
   id: any;
   sub: any;
-  matiere_classe: any;
+  matiere_matiere: any;
+  matiere_id: any;
 
   constructor(private matiereService:MatieresService, private router:Router, private actroute:ActivatedRoute) { }
 
@@ -38,26 +39,13 @@ matiere:Matiere;
           this.matieres = specialite["records"];
           console.log(this.matieres);
           this.matieres = this.matieres.filter(s=>{
-            return s.matiere_id == this.id;
+            return s.classe_id == this.id;
           })
-          console.log('matieres liste',this.matiere);
+        
+          console.log('matieres liste',this.matieres);
         });
   }
 
-  getMatiere_classes(token): void {
-    this.matiereService.getMatiere_classes(token)
-        .subscribe(specialite => {
-          this.matiere_classes = specialite["records"];
-          console.log(this.matiere_classes);
-          this.matiere_classe = this.matiere_classe.filter(s=>{
-            return s.matiere_id == this.id;
-          })
-          console.log('matieres liste',this.matiere_classes);
-        });
-  }
-  matiere_classes(arg0: string, matiere_classes: any) {
-    throw new Error('Method not implemented.');
-  }
 
  
 

@@ -39,7 +39,7 @@ getMatieres(token): Observable<any> {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${token}`
   })
-  return this.http.get(apiUrl, { headers: headers },);
+  return this.http.get(apiUrl, { headers: headers });
 
 }
 

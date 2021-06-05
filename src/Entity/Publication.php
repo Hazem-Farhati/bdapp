@@ -29,12 +29,12 @@ class Publication
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="publications")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $idpuser;
 
     public function __toString(){
-        return $this->nom;
+        return $this->texte;
     }
 
     public function getId(): ?int

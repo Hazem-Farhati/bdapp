@@ -38,10 +38,14 @@ export class PublicationService {
       catchError(this.handleError<Publication[]>('getPublications', []))
     );
   }
-  createPublication(publication: Publication): Observable<any> {
-    return this.http.post<Publication>('http://localhost:8000/api/records/publication', publication, httpOptions).pipe(
-      tap((newPublication: Publication) => console.log(`added hero w/ id=${newPublication.id}`)),
-      catchError(this.handleError<Publication>('create'))
+  createPublication(publication: Publication,token): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    })
+    return this.http.post<any>('http://localhost:8000/api/records/publication', publication, { headers: headers }).pipe(
+      tap((newPublication: any) => console.log(`added hero w/ id=${newPublication.id}`)),
+      catchError(this.handleError<any>('create'))
     );
   }
   getPublication(id: number): Observable<any> {

@@ -30,6 +30,9 @@ enseignant:Enseignant;
     this.enseignantsService.getEnseignants(token)
         .subscribe(specialite => {
           this.enseignants = specialite["records"];
+          this.enseignants = this.enseignants.filter(s=>{
+            return s.grade == 'enseignant';
+          })
           console.log('enseignants liste',this.enseignants);
         });
   }

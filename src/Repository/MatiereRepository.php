@@ -22,19 +22,22 @@ class MatiereRepository extends ServiceEntityRepository
     // /**
     //  * @return Matiere[] Returns an array of Matiere objects
     //  */
-    /*
-    public function findByExampleField($value)
+    
+    public function findByExampleField()
     {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('m.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        return $this->getEntityManager()
+        ->createQueryBuilder()
+        ->addSelect('classe')
+        ->from($this->_entityName, 'p')
+        ->join('p.matiere');
+        /*
+        $dql = 'SELECT mat,mat_class FROM App\Entity\Matiere mat JOIN mat.classe mat_class ';
+        $query = $this->getEntityManager()->createQuery($dql);
+        //dd($query->execute());
+        return $query->execute();
+        */
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?Matiere

@@ -1,14 +1,11 @@
 <h3>Créer Publication</h3>
 <div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">idpuser_id</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="publication.idpuser_id" name="idpuser_id">
-    </div>
+  <form [formGroup]="publicationForm" (ngSubmit)="save()">
+    
 
     <div class="form-group">
       <label for="name">texte</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="publication.texte" name="texte">
+      <input type="text" class="form-control" id="name" required formControlName="texte" name="texte">
     </div>
 
    

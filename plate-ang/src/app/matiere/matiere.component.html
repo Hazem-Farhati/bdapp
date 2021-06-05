@@ -25,19 +25,16 @@
         <div class="col-md-12 blog-pull-right">
            <div class="row">
               <div class="col-sm-6 col-md-3" *ngFor="let matiere of matieres">
-                <div class="project mb-30 border-2px" *ngFor="let matiere_classe of matiere_classes">
+                <div class="project mb-30 border-2px">
                   <div class="thumb">
-                    <img class="img-fullwidth" alt="" src="../../assets/images/project/c1.jpg">
+                    <img class="img-fullwidth" alt="" src="../../assets/images/project/sec.png">
                     <div class="hover-link">
-                      <a class="btn btn-flat btn-dark btn-theme-colored btn-md pull-left font-20" href="/matiere/{{matiere.id}"><span>$500</span> </a>
-
-                    <a class="btn btn-flat btn-dark btn-theme-colored btn-md pull-left font-20" href="/matiere_classe/{{matiere_classe.matiere_id}"><span>$500</span> </a>
+                    <a class="btn btn-flat btn-dark btn-theme-colored btn-md pull-left font-20" href="/matiere/{{matiere.id}}"><span>$500</span> </a>
                     </div>
                   </div>
                 <div class="project-details p-15 pt-10 pb-10">
-
                   <h4 class="font-weight-700 text-uppercase mt-0">
-                      <a href="page-courses-accounting-technologies.html">{{ matiere.nom }}</a>
+                      <a href="matiere/{{matiere.id}}">{{ matiere.nom }}</a>
                   </h4>
                   </div>
                 </div>
