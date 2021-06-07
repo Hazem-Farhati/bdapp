@@ -10,6 +10,7 @@ const httpOptions = {
 const apiUrl = 'http://127.0.0.1:8000/api/records/user';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -37,6 +38,7 @@ getProfils(token): Observable<any> {
     'Authorization': `Bearer ${token}`
   })
   return this.http.get(apiUrl, { headers: headers });
+
 }
 /*
 getProfils () {

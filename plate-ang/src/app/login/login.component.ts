@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
                   //console.log(x);
                   if(x.email == this.userEmails.value.email)
                   localStorage.setItem('user', JSON.stringify(x));
-                  this.router.navigate(['/']);
+                  this.router.navigate(['/home']);
                 })
               //
               }),
