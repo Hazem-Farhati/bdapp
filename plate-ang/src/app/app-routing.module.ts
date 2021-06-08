@@ -24,6 +24,9 @@ import { PublicationListComponent } from './components/publication-list/publicat
 import { AboutComponent } from './about/about.component';
 import { ProfilEnseignantComponent } from './profil-enseignant/profil-enseignant.component';
 import { RegisterComponent } from './register/register.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsComponent } from './terms/terms.component';
+import { DisclamerComponent } from './disclamer/disclamer.component';
 
 
 const routes: Routes = [
@@ -40,6 +43,13 @@ const routes: Routes = [
   {path: 'quizz', component: QuizzComponent },
   {path: 'section/:id', component: SectionComponent },
   {path: 'publication', component: PublicationComponent },
+
+  {path: 'privacy', component: PrivacyComponent },
+  {path: 'terms', component: TermsComponent },
+  {path: 'disclamer', component: DisclamerComponent },
+
+
+
 
   {path: 'profil', component: ProfilComponent },
 

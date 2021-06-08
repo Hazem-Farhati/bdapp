@@ -31,6 +31,9 @@ import { CreatePublicationComponent } from './components/create-Publication/crea
 import { PublicationListComponent } from './components/publication-list/publication-list.component';
 import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsComponent } from './terms/terms.component';
+import { DisclamerComponent } from './disclamer/disclamer.component';
 
 
 
@@ -63,6 +66,9 @@ import { RegisterComponent } from './register/register.component';
      PublicationListComponent,
       AboutComponent,
       RegisterComponent,
+      PrivacyComponent,
+      TermsComponent,
+      DisclamerComponent,
 
 
   ],
