@@ -4,9 +4,13 @@ namespace App\Entity;
 
 use App\Repository\QuestionsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=QuestionsRepository::class)
+ * @UniqueEntity("titre")
+
  */
 class Questions
 {
@@ -19,6 +23,8 @@ class Questions
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     
+     * Assert\Nom
      */
     private $titre;
 

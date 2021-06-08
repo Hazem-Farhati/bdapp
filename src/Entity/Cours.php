@@ -4,9 +4,11 @@ namespace App\Entity;
 
 use App\Repository\CoursRepository;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
- * @ORM\Entity(repositoryClass=CoursRepository::class)
+ * @ORM\Entity(repositoryClass=CoursRepository::class) 
+ * @UniqueEntity("nom")
  */
 class Cours
 {
@@ -19,6 +21,7 @@ class Cours
 
     /**
      * @ORM\Column(type="string", length=30)
+    * Assert\Nom
      */
     private $nom;
 
