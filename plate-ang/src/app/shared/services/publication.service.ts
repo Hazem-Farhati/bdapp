@@ -36,8 +36,12 @@ getPublications(token): Observable<any> {
   const headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${token}`
-  })
-  return this.http.get(apiUrl, { headers: headers });
+  });
+  console.log(token);
+  return this.http.get(apiUrl, { headers: headers }).pipe(
+    tap(_ => console.log('fetched publications')),
+    catchError(this.handleError<Publication[]>('getPublications', []))
+  );
 }
 /*
 getPublications () {

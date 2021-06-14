@@ -25,7 +25,7 @@ class Departement
 
     /**
      * @ORM\Column(type="string", length=30)
-     * Assert\Nom
+     * Assert\Nom 
      */
     private $nom;
 

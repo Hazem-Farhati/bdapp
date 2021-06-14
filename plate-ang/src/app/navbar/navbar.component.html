@@ -1,5 +1,5 @@
 
-<div class="header-top bg-theme-color-2 sm-text-center">
+<div class="header-top bg-theme-color-2 sm-text-center" >
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -34,47 +34,39 @@
   </div>
 </div>
 
-<div class="header-nav">
+<div class="header-nav"  >
    
     <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
-      <div class="container">
+      <div class="container"  >
         <nav id="menuzord-right" class="menuzord default">
           <a class="menuzord-brand pull-left flip" href="/home">
-            <img src="assets/images/logo-wide.png" alt="">
+            <img src="assets/images/logp.png" alt=""width="300">
           </a>
          
-          <ul class="menuzord-menu">
+          <ul class="menuzord-menu" >
             <li class="active"><a href="/home">Home   <span class="indicator"></span></a>                                     
             </li>
             <li><a href="/departement">Departement</a>
 
                             
-              <ul class="dropdown">     
-                <li *ngFor="let departement of departements" > <a href="/section/{{departement.id}}">{{departement.nom}} </a>
-                  <ul class="dropdown">
-                    <li><a href="departement/{{departement.id}} ">Header Style1</a></li>     
-                  <ul class="dropdown">
-              </ul>
-              </ul>
+              <ul class="dropdown" >     
+                <li *ngFor="let departement of departements"  > <a href="/section/{{departement.id}}">{{departement.nom}} </a>
+                 
+              
 
             <ul class="dropdown">
                 
-              <li *ngFor="let section of sections" > <a href="/section/{{section.id}}">{{section.nom}} </a>
+              <li *ngFor="let section of sections" > <a href="/section/{{departement.id}}">{{section.nom}} </a>
 
 
-                <ul class="dropdown">
-                  <li><a href="section/{{section.id}} ">Header Style1</a></li>
-          </ul>
-
+         
     
             </ul>
-          </ul>
-
+      </ul>
 
             </li>
-            <li><a href="/enseignant">Enseignants</a> </li>
-            <li><a href="/etudiant">Etudiant</a> </li>
-            <li><a href="/publication">Publication</a> </li>
+            <li  ><a href="/enseignant">Enseignants</a> </li>
+            <li *ngIf="user" ><a href="/publication">Publication</a> </li>
 
 
 
@@ -83,17 +75,37 @@
             <li><a href="/about">About</a> </li>
 
             
-              <li >             <a> 
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-person-circle">
+              <li *ngIf="!user" >             <a> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-person-circle">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-              </svg>      <a  href="/profil" > Profile </a>    </a> 
+              </svg>      <a  href="/login" > se connecter </a>    </a> 
 
             
 
           </li>
+          
+          <li *ngIf="user" >             <a> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-person-circle">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+      </svg>      <a  href="/profil" > Profile </a>    </a> 
 
+    
+
+  </li>
+
+  <li *ngIf="user " class="nav-item">
+    <a routerLink="/login" (click)="logout()"
+  
+    > logout</a>
+
+
+   </li>
+   
                </ul>
+
+               
              
           
         </nav>

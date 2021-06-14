@@ -75,7 +75,7 @@ export class AuthenticationService extends ApiService {
 
     register(user): Observable<any> {
       console.log(user);
-      return this.httpClient.post<any>('http://127.0.0.1:8000/api/login_check', {email: user.email, password: user.password})
+      return this.httpClient.post<any>('http://127.0.0.1:8000/api/user/new', user)
         .pipe(
           map(user => {
             // login successful if there's a jwt token in the response
