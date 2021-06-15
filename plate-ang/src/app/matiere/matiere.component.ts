@@ -37,11 +37,13 @@ matiere:Matiere;
     this.matiereService.getMatieres(token)
         .subscribe(specialite => {
           this.matieres = specialite["records"];
+          debugger;
           console.log(this.matieres);
-          this.matieres = this.matieres.filter(s=>{
-            return s.classe_id == this.id;
-          })
-        
+          // let filteredData = this.matieres.filter(s=>{
+          //   return s.classe_id == this.id;
+          // })
+          let filteredData = this.matieres.filter(s=>s.id == this.id)
+          this.matieres = [...filteredData];
           console.log('matieres liste',this.matieres);
         });
   }

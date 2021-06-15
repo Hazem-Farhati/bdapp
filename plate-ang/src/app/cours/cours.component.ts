@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Cour } from '../shared/classes/cour';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CoursService } from '../shared/services/cours.service';
 
 @Component({
@@ -11,17 +10,21 @@ import { CoursService } from '../shared/services/cours.service';
 export class CoursComponent implements OnInit {
 
   
-  cours:Cour[];
-cour:Cour;
   user: any;
+  id: any;
+  sub: any;
+  cours: any;
 
-  constructor(private coursService:CoursService, private router:Router) { }
+  constructor(private coursService:CoursService, private router:Router, private actroute:ActivatedRoute) { }
 
   ngOnInit() {
+    this.sub = this.actroute.params.subscribe( parms=>{
+      this.id = +parms['id'];
+    });
+    console.log(this.id);
     this.user = JSON.parse(localStorage.getItem('currentUser'));
     setTimeout(() => {
       this.getCours(this.user.token);
-      console.log(this.getCours["records"]);
     }, 1000);
   }
 
@@ -30,6 +33,10 @@ cour:Cour;
     this.coursService.getCours(token)
         .subscribe(specialite => {
           this.cours = specialite["records"];
+          console.log(this.cours);
+          this.cours = this.cours.filter(s=>{
+            return s.matiere_id == this.id;
+          })
           console.log('cours liste',this.cours);
         });
   }

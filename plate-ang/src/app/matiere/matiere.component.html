@@ -1,14 +1,14 @@
 <div class="main-content bg-lighter">
-  <!-- Matiere: inner-header -->
+  <!-- Section: inner-header -->
   <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="images/bg/bg6.jpg">
     <div class="container pt-70 pb-20">
-      <!-- Matiere Content -->
-      <div class="matiere-content">
+      <!-- Section Content -->
+      <div class="section-content">
         <div class="row">
           <div class="col-md-12">
             <h2 class="title text-white text-center">Course Gird</h2>
             <ol class="breadcrumb text-left text-black mt-10">
-              <li><a href="#">Home</a></li>
+              <li><a href="/home">Home</a></li>
               <li><a href="#">Pages</a></li>
               <li class="active text-gray-silver">Page Title</li>
             </ol>
@@ -18,7 +18,7 @@
     </div>
   </section>
 
-  <!-- Matiere: Course gird -->
+  <!-- Section: Course gird -->
   <section>
     <div class="container">
       <div class="row">
@@ -27,14 +27,13 @@
               <div class="col-sm-6 col-md-3" *ngFor="let matiere of matieres">
                 <div class="project mb-30 border-2px">
                   <div class="thumb">
-                    <img class="img-fullwidth" alt="" src="../../assets/images/project/sec.png">
+                    <img class="img-fullwidth" alt="" src="../../assets/images/project/d1.jpg">
                     <div class="hover-link">
-                    <a class="btn btn-flat btn-dark btn-theme-colored btn-md pull-left font-20" href="/matiere/{{matiere.id}}"><span>$500</span> </a>
                     </div>
                   </div>
                 <div class="project-details p-15 pt-10 pb-10">
                   <h4 class="font-weight-700 text-uppercase mt-0">
-                      <a href="matiere/{{matiere.id}}">{{ matiere.nom }}</a>
+                      <a href="cours/{{matiere.id}}">{{ matiere.nom }}</a>
                   </h4>
                   </div>
                 </div>
