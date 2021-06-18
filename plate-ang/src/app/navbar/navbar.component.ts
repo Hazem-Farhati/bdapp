@@ -21,8 +21,6 @@ departement:Departement;
   user: any;
   section: Section[];
   sections: Section[];
-  etudiantService: any;
-  etudiants: any;
   currentUserSubject: any;
   constructor(private departementService:DepartementsService,
      private sectionService:SectionsService,private EtudiantService:EtudiantsService,
@@ -31,7 +29,9 @@ departement:Departement;
      ) { }
 
   ngOnInit() {
+    setInterval(()=>{
     this.user = JSON.parse(localStorage.getItem('currentUser'));
+  },1000);
     setTimeout(() => {
       this.getDepartements(this.user.token);
       console.log(this.getDepartements);
@@ -42,10 +42,7 @@ departement:Departement;
       console.log(this.getSections);
     }, 1000);
 
-    setTimeout(() => {
-      this.getEtudiants(this.user.token);
-      console.log(this.getEtudiants);
-    }, 1000);
+  
   }
 
 
@@ -66,14 +63,7 @@ departement:Departement;
         });
   }
 
-  
-  getEtudiants(token): void {
-    this.etudiantService.getEtudiants(token)
-        .subscribe(specialite => {
-          this.etudiants = specialite["records"];
-          console.log('Etudiant liste',this.etudiants);
-        });
-  }
+ 
 
   loggedin(){
     return localStorage.getItem('token');

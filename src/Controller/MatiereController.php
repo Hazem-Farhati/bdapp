@@ -20,8 +20,8 @@ class MatiereController extends AbstractController
      */
     public function index(MatiereRepository $MatiereRepository): Response
     {
-        $Matieres= $MatiereRepository->findByExampleField();
-        dd($Matieres);
+        $Matieres= $MatiereRepository->findAll();
+        //dd($Matieres);
         return $this->render('Matiere/index.html.twig', [
             'Matieres' => $MatiereRepository->findAll(),
         ]);

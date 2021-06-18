@@ -34,6 +34,7 @@ import { RegisterComponent } from './register/register.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { DisclamerComponent } from './disclamer/disclamer.component';
+import { MessageenComponent } from './messageen/messageen.component';
 
 
 
@@ -55,6 +56,8 @@ import { DisclamerComponent } from './disclamer/disclamer.component';
     EtudiantComponent,
     CoursComponent,
     MessageComponent,
+    MessageenComponent,
+
     PublicationComponent,
     ProfilComponent,
     ProfilEnseignantComponent,
@@ -69,6 +72,7 @@ import { DisclamerComponent } from './disclamer/disclamer.component';
       PrivacyComponent,
       TermsComponent,
       DisclamerComponent,
+      MessageenComponent,
 
 
   ],

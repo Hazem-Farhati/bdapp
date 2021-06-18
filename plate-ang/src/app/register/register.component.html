@@ -1,3 +1,5 @@
+<div class="container">
+
 <div class="col-md-10">
     <div class="card card-container">
 
@@ -10,7 +12,7 @@
       <img src="assets/images/login.jpg"  width="200" height="200"> 
 
         <div class="form-group">
-          <label for="fullname">fullname</label>
+          <label for="fullname">Nom et Prenom</label>
           <input
             type="text"
             class="form-control"
@@ -32,25 +34,25 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="username">Email</label>
           <input
             type="email"
             class="form-control"
-            name="email"
-            [(ngModel)]="form.email"
+            name="username"
+            [(ngModel)]="form.username"
             required
-            email
-            #email="ngModel"
+            username
+            #username="ngModel"
           />
-          <div class="alert-danger" *ngIf="f.submitted && email.invalid">
-            <div *ngIf="email.errors.required">Email is required</div>
-            <div *ngIf="email.errors.email">
+          <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+            <div *ngIf="username.errors.required">Email is required</div>
+            <div *ngIf="username.errors.username">
               Email must be a valid email address
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">Mot de passe</label>
           <input
             type="password"
             class="form-control"
@@ -99,7 +101,7 @@
 
 
         <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+          <button type="submit" class="btn btn-primary btn-block">Créer compte</button>
         </div>
   
         <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
@@ -111,4 +113,4 @@
         Your registration is successful!
       </div>
     </div>
-  </div>
+  </div></div>

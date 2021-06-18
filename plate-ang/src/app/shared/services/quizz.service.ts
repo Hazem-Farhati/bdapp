@@ -7,8 +7,8 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
-const apiUrl = 'http://127.0.0.1:8000/api/records/quizz';
-const apiUrl1 = 'http://127.0.0.1:8000/api/records/quizz';
+const apiUrl = 'http://127.0.0.1:8000/api/records/question';
+const apiUrl1 = 'http://127.0.0.1:8000/api/records/question';
 
 
 

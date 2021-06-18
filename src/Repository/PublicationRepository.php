@@ -22,19 +22,19 @@ class PublicationRepository extends ServiceEntityRepository
     // /**
     //  * @return Publication[] Returns an array of Publication objects
     //  */
-    /*
-    public function findByExampleField($value)
+    
+    public function findbybuser()
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $conn = $this->getEntityManager()
+        ->getConnection();
+        var_dump($conn);die;
+        $sql= "SELECT user.fullname,publication.* FROM user, publication WHERE user.id=publication.idpuser_id";
+        $em = $this->getDoctrine()->geManager();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?Publication

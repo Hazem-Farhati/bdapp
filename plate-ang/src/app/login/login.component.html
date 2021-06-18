@@ -1,11 +1,12 @@
 
+
 <div class="row" id="login">
 
   <div class="col-lg-4">
       
   </div>
   
-<div class="col-lg-5">
+<div class="col-lg-5" >
     <img src="assets/images/login.jpg"  width="300" height="300" position="left"> 
 
   <form [formGroup]="userEmails" (ngSubmit)="onSubmit()">
@@ -44,6 +45,12 @@ formControlName="email" required email>
     <div class="form-group">
         <div class="text-center col-md-10">
             <button type="submit" class="btn btn-danger px-4 py-2 text-uppercase white font-small-4 box-shadow-2 border-0">Connexion</button>
+        </div>
+        <br>
+<br>
+
+        <div class="text-center col-md-10">
+            <button type="submit" class="btn btn-danger px-4 py-2 text-uppercase white font-small-4 box-shadow-2 border-0">Créer un Compte</button>
         </div>
     </div>
 

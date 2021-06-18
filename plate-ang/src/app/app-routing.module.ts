@@ -27,6 +27,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { DisclamerComponent } from './disclamer/disclamer.component';
 import { MatiereComponent } from './matiere/matiere.component';
+import { MessageenComponent } from './messageen/messageen.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,9 @@ const routes: Routes = [
   {path: 'etudiant', component: EtudiantComponent },
   {path: 'matiere/:id', component: MatiereComponent },
   {path: 'message', component: MessageComponent },
+
+  {path: 'messageen', component: MessageenComponent },
+
   {path: 'quizz/:id', component: QuizzComponent },
   {path: 'section/:id', component: SectionComponent },
   {path: 'publication', component: PublicationComponent },

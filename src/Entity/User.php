@@ -76,8 +76,9 @@ class User implements UserInterface
      */
     private $messages;
 
+   
     /**
-     * @ORM\OneToMany(targetEntity=Publication::class, mappedBy="idpuser")
+     * @ORM\OneToMany(targetEntity=Publication::class, mappedBy="idpuser", orphanRemoval=true)
      */
     private $publications;
 

@@ -20,8 +20,10 @@ class PublicationController extends AbstractController
      */
     public function index(PublicationRepository $PublicationRepository): Response
     {
+        $publications = $PublicationRepository->findAll();
+        dd($publications);
         return $this->render('Publication/index.html.twig', [
-            'Publications' => $PublicationRepository->findAll(),
+            'Publications' => $publications,
         ]);
     }
 

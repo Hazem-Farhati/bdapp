@@ -18,15 +18,15 @@ export class CreatePublicationComponent implements OnInit {
   userinfo: any;
 
   constructor(private publicationService: PublicationService,
-    private router: Router, private fb : FormBuilder) { }
+    private router: Router, private fb: FormBuilder) { }
 
   ngOnInit() {
     this.date = new Date();
     this.user = JSON.parse(localStorage.getItem('currentUser'));
     this.userinfo = JSON.parse(localStorage.getItem('user'));
-    console.log(this.userinfo); 
+    console.log(this.userinfo);
     this.publicationForm = this.fb.group({
-      texte:[''],
+      texte: [''],
       date: this.date,
       //idpuser_id: this.userinfo.id
     })
@@ -38,15 +38,19 @@ export class CreatePublicationComponent implements OnInit {
 
   save() {
     //this.publication.idpuser_id = this.user;
-    console.log(this.publicationForm.value);
-    this.publicationService.createPublication(this.publicationForm.value,this.user.token)
-      .subscribe(data => console.log(this.user), error => console.log(this.user.token));
+    if (this.user == undefined) {
+      alert('User token not found');
+    } else {
+      console.log(this.publicationForm.value);
+      this.publicationService.createPublication(this.publicationForm.value, this.user.token)
+        .subscribe(data => console.log(this.user), error => console.log(this.user.token));
+    }
     //this.gotoList();     
   }
 
   onSubmit() {
     this.submitted = true;
-    this.save();    
+    this.save();
   }
 
   gotoList() {

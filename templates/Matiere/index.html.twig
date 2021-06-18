@@ -3,7 +3,7 @@
 {% block title %}Matiere index{% endblock %}
 
 {% block body %}
-    <h1>Matiere index</h1>
+    <h1>Matiere</h1>
 
     
   <table class="table table-bordered table table-striped">
@@ -11,7 +11,6 @@
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
-                <th>Classe</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,6 +18,7 @@
         {% for Matiere in Matieres %}
             <tr>
                 <td>{{ Matiere.id }}</td>
+
                 <td>{{ Matiere.nom }}</td>
                 <td>
                <a href="{{ path('Matiere_show', {'id': Matiere.id}) }}">
