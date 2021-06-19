@@ -28,6 +28,7 @@ import { TermsComponent } from './terms/terms.component';
 import { DisclamerComponent } from './disclamer/disclamer.component';
 import { MatiereComponent } from './matiere/matiere.component';
 import { MessageenComponent } from './messageen/messageen.component';
+import { CourdetailsComponent } from './cours/courdetails/courdetails.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'enseignant', component: EnseignantComponent },
   {path: 'cours/:id', component: CoursComponent },
+  {path: 'courdetails', component: CourdetailsComponent },
+
   {path: 'classe/:id', component: ClasseComponent },
   {path: 'departement', component: DepartementComponent },
   {path: 'departementsec', component: DepartementSecComponent },

@@ -35,6 +35,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { DisclamerComponent } from './disclamer/disclamer.component';
 import { MessageenComponent } from './messageen/messageen.component';
+import { CourdetailsComponent } from './cours/courdetails/courdetails.component';
 
 
 
@@ -55,6 +56,8 @@ import { MessageenComponent } from './messageen/messageen.component';
     QuizzComponent,
     EtudiantComponent,
     CoursComponent,
+
+    CourdetailsComponent,
     MessageComponent,
     MessageenComponent,
 
@@ -73,6 +76,7 @@ import { MessageenComponent } from './messageen/messageen.component';
       TermsComponent,
       DisclamerComponent,
       MessageenComponent,
+      CourdetailsComponent,
 
 
   ],
