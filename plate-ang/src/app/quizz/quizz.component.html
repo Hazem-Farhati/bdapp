@@ -6,11 +6,10 @@
         <div class="-content">
           <div class="row">
             <div class="col-md-12">
-              <h2 class="title text-white text-center">Course Gird</h2>
+              <h2 class="title text-white text-center">Quiz</h2>
               <ol class="breadcrumb text-left text-black mt-10">
                 <li><a href="/home">Home</a></li>
                 <li><a href="#">Pages</a></li>
-                <li class="active text-gray-silver">Page Title</li>
               </ol>
             </div>
           </div>
@@ -39,6 +38,56 @@
                   </div>
                 </div> 
              </div>
+             <div id="quiz">
+              <title>Quiz Application</title>
+            <br>
+            1.Dans Angular, vous pouvez passer des données du composant parent au composant enfant en utilisant :<br>
+            <input type="radio" name="question1" id="correct1">@Output() <br>
+            <input type="radio" name="question1">@Input() <br>
+            <input type="radio" name="question1">Input <br>
+            <input type="radio" name="question1">Output <br><br>
+            
+           2.Dans Angular, vous pouvez passer des données du composant enfant au composant parent en utilisant :<br>
+            <input type="radio" name="question2" >@Output() <br>
+            <input type="radio" name="question2">@Input() <br>
+            <input type="radio" name="question2" id="correct2">Input <br>
+            <input type="radio" name="question2">Output <br><br>
+            
+           3.Quelle directive relie la valeur des contrôles aux données ?<br>
+            <input type="radio" name="question3" > ng-app <br>
+            <input type="radio" name="question3"id="correct3">ng-init <br>
+            <input type="radio" name="question3">ng-model<br><br>
+            
+
+           4.Quelle directive modifie la hiérarchie des DOM ?<br>
+            <input type="radio" name="question4" > Structural directive <br>
+            <input type="radio" name="question4"id="correct4">Attribute directive <br><br>
+
+           5.Quel est le bon nom de classe de contrôle de formulaire qui est défini à true via [(ngModel)] chaque fois que la valeur est modifiée ? <br>
+            <input type="radio" name="question5" > .ng-invalid <br>
+            <input type="radio" name="question5"id="correct5">.ng-pending <br>
+            <input type="radio" name="question5">.ng-pristine<br><br>
+            
+            <input type="submit" name="submit" value="Validé" onClick="result()">
+            <script type="text/javascript">
+            function result()
+            {
+              var score=0;
+              if(document.getElementById('correct1').checked)
+                {	score++;
+                }
+              if(document.getElementById('correct2').checked)
+                {	score++;
+                }
+              if(document.getElementById('correct3').checked)
+                {	score++;
+                }
+             alert("Your score is:"+score);
+             // to print on browser
+             // document.write("Your score is:"+score);
+            }
+            </script>
+             </div>
           </div>
         </div>
         <div class="row">
@@ -55,7 +104,11 @@
                 <li> <a href="#" aria-label="Next"> <span aria-hidden="true">»</span> </a> </li>
               </ul>
 
-              
+ 
+
+
+
+
             </nav>
           </div>
         </div>
