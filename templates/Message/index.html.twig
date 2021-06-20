@@ -20,7 +20,6 @@
                 <th>Texte</th>
                 <th>Date</th>
                 <th>Destinateur</th>
-                <th>Emetteur</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -32,7 +31,6 @@
                 <td>{{ Message.texte }}</td>
                 <td>{{ Message.date ? Message.date|date('Y-m-d') : '' }}</td>
                 <td>{{ Message.destinateur }}</td>
-                <td>{{ Message.emetteur }}</td>
                 <td>
                    <a href="{{ path('Message_show', {'id': Message.id}) }}">
                     <button type="button" class="btn btn-info">Afficher <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
