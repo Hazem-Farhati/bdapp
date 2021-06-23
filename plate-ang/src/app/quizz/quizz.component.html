@@ -1,117 +1,141 @@
-<div class="main-content bg-lighter">
-    <!-- Quizz: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="images/bg/bg6.jpg">
-      <div class="container pt-70 pb-20">
-        <!-- Quizz Content -->
-        <div class="-content">
-          <div class="row">
-            <div class="col-md-12">
-              <h2 class="title text-white text-center">Quiz</h2>
-              <ol class="breadcrumb text-left text-black mt-10">
-                <li><a href="/home">Home</a></li>
-                <li><a href="#">Pages</a></li>
-              </ol>
+
+
+
+<div id="wrapper" class="clearfix">
+  <!-- preloader -->
+  <div id="preloader">
+    <div id="spinner">
+      <img alt="" src="assets/images/preloaders/5.gif">
+    </div>
+    <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
+  </div>
+
+  <!-- Start main-content -->
+  <div class="main-content">
+    <!-- Section: home -->
+    <section id="home" class="divider parallax layer-overlay overlay-dark-9" data-bg-img="../../assets/images/about/8.jpg">
+      <div class="display-table">
+        <div class="display-table-cell">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-md-push-3">
+                <div class="bg-lightest border-1px p-30 mb-0">
+                  <h3 class="text-theme-colored mt-0 pt-5"> Angular teste</h3><br>
+                  <hr>
+                  <form id="job_apply_form" name="job_apply_form" action="#" method="post" enctype="multipart/form-data">
+                 
+                    <div class="row">               
+                      <div class="col-sm-6">
+                        
+                      </div>
+                      <div class="col-sm-6">
+                      
+                      </div>
+                    </div>
+
+                    <div class="form-group mb-20">
+                      <label><strong>Dans Angular, vous pouvez passer des données du composant parent au composant enfant à l’aide de :</strong></label><br>
+                      <div class="radio mt-5">
+                        <label class="radio-inline">
+                          <input type="radio" name="amount" value="20">
+                          @Output()</label><br>
+                        <label class="radio-inline">
+                          <input type="radio" name="amount" value="50">
+                          @Input()</label><br>
+                        <label class="radio-inline">
+                          <input type="radio" name="amount" value="100">
+                          entrée</label><br>
+                        <label class="radio-inline">
+                          <input type="radio" name="amount" value="200">
+                          sortie</label><br>
+                     
+                      </div>
+                    </div>
+
+
+                    <div class="form-group mb-20">
+                      <label><strong>Dans Angular, vous pouvez passer des données du composant enfant au composant parent à l’aide de :</strong></label><br>
+                      <div class="radio mt-5">
+                        <label class="radio-inline">
+                          <input type="radio" name="amount" value="20">
+                          @Output()</label><br>
+                        <label class="radio-inline">
+                          <input type="radio" name="amount" value="50">
+                          @Input()</label><br>
+                        <label class="radio-inline">
+                          <input type="radio" name="amount" value="100">
+                          entrée</label><br>
+                        <label class="radio-inline">
+                          <input type="radio" name="amount" value="200">
+                          sortie</label><br>
+                     
+                      </div>
+                    </div>
+
+                    <div class="form-group mb-20">
+                      <label><strong>Quelle directive relie la valeur des contrôles aux données ?</strong></label><br>
+                      <div class="radio mt-5">
+                        <label class="radio-inline">
+                          <input type="radio" name="amount" value="20">
+                          ng-app</label><br>
+                        <label class="radio-inline">
+                          <input type="radio" name="amount" value="50">
+                          ng-init</label><br>
+                        <label class="radio-inline">
+                          <input type="radio" name="amount" value="100">
+                          modèle ng</label><br>
+          
+                     
+                      </div>
+                    </div>
+
+
+                  
+                    <div class="form-group">
+                      <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                      <button type="submit" class="btn btn-block btn-dark btn-theme-colored btn-sm mt-20 pt-10 pb-10" data-loading-text="Please wait...">Enregistrer</button>
+                    </div>
+                  </form>
+                  <!-- Job Form Validation-->
+                  <script type="text/javascript">
+                    $("#job_apply_form").validate({
+                      submitHandler: function(form) {
+                        var form_btn = $(form).find('button[type="submit"]');
+                        var form_result_div = '#form-result';
+                        $(form_result_div).remove();
+                        form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                        var form_btn_old_msg = form_btn.html();
+                        form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                        $(form).ajaxSubmit({
+                          dataType:  'json',
+                          success: function(data) {
+                            if( data.status == 'true' ) {
+                              $(form).find('.form-control').val('');
+                            }
+                            form_btn.prop('disabled', false).html(form_btn_old_msg);
+                            $(form_result_div).html(data.message).fadeIn('slow');
+                            setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                          }
+                        });
+                      }
+                    });
+                  </script>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> 
+  </div>  
+  <!-- end main-content -->
+
+  <!-- Footer -->
   
-    <!-- Quizz: Course gird -->
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 blog-pull-right">
-             <div class="row">
-                <div class="col-sm-6 col-md-3" *ngFor="let quizz of quizzs">
-                  <div class="project mb-30 border-2px">
-                    <div class="thumb">
-                      <img class="img-fullwidth" alt="" src="../../assets/images/project/c1.jpg">
-                      <div class="hover-link">
-                      </div>
-                    </div>
-                  <div class="project-details p-15 pt-10 pb-10">
-                    <h4 class="font-weight-700 text-uppercase mt-0">
-                        <a href="question/{{quizz.id}}">{{ quizz.titre }}</a>
-                    </h4>
-                    </div>
-                  </div>
-                </div> 
-             </div>
-             <div id="quiz">
-              <title>Quiz Application</title>
-            <br>
-            1.Dans Angular, vous pouvez passer des données du composant parent au composant enfant en utilisant :<br>
-            <input type="radio" name="question1" id="correct1">@Output() <br>
-            <input type="radio" name="question1">@Input() <br>
-            <input type="radio" name="question1">Input <br>
-            <input type="radio" name="question1">Output <br><br>
-            
-           2.Dans Angular, vous pouvez passer des données du composant enfant au composant parent en utilisant :<br>
-            <input type="radio" name="question2" >@Output() <br>
-            <input type="radio" name="question2">@Input() <br>
-            <input type="radio" name="question2" id="correct2">Input <br>
-            <input type="radio" name="question2">Output <br><br>
-            
-           3.Quelle directive relie la valeur des contrôles aux données ?<br>
-            <input type="radio" name="question3" > ng-app <br>
-            <input type="radio" name="question3"id="correct3">ng-init <br>
-            <input type="radio" name="question3">ng-model<br><br>
-            
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+</div>
+<!-- end wrapper -->
 
-           4.Quelle directive modifie la hiérarchie des DOM ?<br>
-            <input type="radio" name="question4" > Structural directive <br>
-            <input type="radio" name="question4"id="correct4">Attribute directive <br><br>
+<!-- Footer Scripts -->
+<!-- JS | Custom script for all pages -->
 
-           5.Quel est le bon nom de classe de contrôle de formulaire qui est défini à true via [(ngModel)] chaque fois que la valeur est modifiée ? <br>
-            <input type="radio" name="question5" > .ng-invalid <br>
-            <input type="radio" name="question5"id="correct5">.ng-pending <br>
-            <input type="radio" name="question5">.ng-pristine<br><br>
-            
-            <input type="submit" name="submit" value="Validé" onClick="result()">
-            <script type="text/javascript">
-            function result()
-            {
-              var score=0;
-              if(document.getElementById('correct1').checked)
-                {	score++;
-                }
-              if(document.getElementById('correct2').checked)
-                {	score++;
-                }
-              if(document.getElementById('correct3').checked)
-                {	score++;
-                }
-             alert("Your score is:"+score);
-             // to print on browser
-             // document.write("Your score is:"+score);
-            }
-            </script>
-             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <nav>
-              <ul class="pagination xs-pull-center m-0">
-                <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">«</span> </a> </li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">...</a></li>
-                <li> <a href="#" aria-label="Next"> <span aria-hidden="true">»</span> </a> </li>
-              </ul>
-
- 
-
-
-
-
-            </nav>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>

@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "knisterpeter.vscode-github",
-        "anujshankar95.yield"
+        "anujshankar95.yield",
+        "ms-vsliveshare.vsliveshare"
     ]
 }

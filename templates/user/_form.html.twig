@@ -1,5 +1,19 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-<button class="btn btn-primary" type="submit">Enregistrer <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
-  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-</svg></button>{{ form_end(form) }}
+<form name="user" method="post" >
+    <div id="user"><div> 
+    <label for="user_email" class="required">&emsp; Email  &emsp;&emsp;&emsp;&emsp;&emsp;</label> 
+    
+    <input type="text" id="user_email" name="user[email]" required="required" maxlength="180" position="center"></div>
+    <div><label for="user_password" class="required"> &emsp; Mot de Passe &emsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="text" id="user_password" name="user[password]" required="required"></div>
+    <div><label for="user_fullname" class="required"> &emsp;Nom et prénom &ensp;</label>
+    <input type="text" id="user_fullname" name="user[fullname]" required="required" maxlength="255">
+    </div><div><label for="user_adresse" class="required">&emsp;Adresse &emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp</label>
+    <input type="text" id="user_adresse" name="user[adresse]" required="required" maxlength="30"></div>
+    <div><label for="user_grade" class="required">&emsp;Grade &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp</label>
+    <input type="text" id="user_grade" name="user[grade]" required="required" maxlength="30"></div>
+    <input type="hidden" id="user__token" name="user[_token]" value="2OTg2H_JnWIWbAHX2Wr4ZSERTBtWBA59pxyhXa92QoI">
+    </div><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button class="btn btn-primary" type="submit">&emsp;Enregistrer <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+</svg></button>
+</form>

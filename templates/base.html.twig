@@ -8,7 +8,7 @@
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
               
-
+<link rel="stylesheet" href="/build/app.css">
                 <!-- Google Font: Source Sans Pro -->
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
                 <!-- Font Awesome -->
@@ -32,6 +32,12 @@
         {% endblock %}
 
         {% block javascripts %}
+
+
+     <script src="/build/runtime.js"></script>
+
+<script src="/build/app.js"></script>
+        
            <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
             <!-- jQuery UI 1.11.4 -->
             <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
